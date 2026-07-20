@@ -44,10 +44,13 @@ const seo = {
 
   <body>
     <header class="header">
-      <a class="brand" href="#home" aria-label="QuoProfit - Home">
-        <span class="brand-mark">QP</span>
-        <span class="brand-name">QuoProfit</span>
-      </a>
+<a class="brand" href="#home" aria-label="QuoProfit - Home">
+  <img
+    src="/logo-quoprofit.jpg"
+    alt="QuoProfit - Profit Intelligence Platform"
+    class="brand-logo"
+  />
+</a>
 
       <nav class="navigation" aria-label="Menu principale">
         <a href="#quoprofit">Cos'è</a>
@@ -829,6 +832,13 @@ const seo = {
   .brand-name {
     white-space: nowrap;
   }
+
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 68px;
+  object-fit: contain;
+}
 
   .navigation {
     display: flex;

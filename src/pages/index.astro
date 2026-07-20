@@ -592,35 +592,22 @@ const seo = {
               </span>
             </label>
 
-<button class="button demo-submit" type="submit">Invia richiesta</button>
+            <button class="button demo-submit" type="submit">Invia richiesta</button>
 
-<div class="form-confirmation">
-<div class="form-confirmation">
-  <p id="form-status" class="form-status" aria-live="polite"></p>
+            <div class="form-confirmation">
+              <p id="form-status" class="form-status" aria-live="polite"></p>
 
-  <a
-    id="calendar-button-inline"
-    class="button button-calendar-inline"
-    href="https://calendar.app.google/215FfuoWEndYFCNT6"
-    target="_blank"
-    rel="noopener noreferrer"
-    hidden
-  >
-    Prenota la tua demo
-  </a>
-</div>
-
-  <a
-    id="calendar-button-inline"
-    class="button button-calendar-inline"
-    href="https://calendar.app.google/215FfuoWEndYFCNT6"
-    target="_blank"
-    rel="noopener noreferrer"
-    hidden
-  >
-    Prenota la tua demo
-  </a>
-</div>
+              <a
+                id="calendar-button-inline"
+                class="button button-calendar-inline"
+                href="https://calendar.app.google/215FfuoWEndYFCNT6"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="display: none;"
+              >
+                Prenota la tua demo
+              </a>
+            </div>
           </form>
 
           <aside class="demo-side">
@@ -642,7 +629,7 @@ const seo = {
               <p>Approfondiamo insieme prezzi, costi, marginalità e profitto.</p>
             </div>
 
-            <div id="calendar-box" class="calendar-box" hidden>
+            <div id="calendar-box" class="calendar-box" style="display: none;">
               <strong>Richiesta ricevuta correttamente.</strong>
               <p>Ora scegli direttamente data e orario della demo.</p>
               <a
@@ -980,6 +967,7 @@ const seo = {
       const form = document.getElementById("demo-form");
       const status = document.getElementById("form-status");
       const calendarBox = document.getElementById("calendar-box");
+      const calendarButtonInline = document.getElementById("calendar-button-inline");
       const conoscenza = document.getElementById("conoscenza");
       const bniField = document.getElementById("capitolo-bni-field");
       const altroField = document.getElementById("altro-conoscenza-field");
@@ -1012,6 +1000,11 @@ const seo = {
         status.textContent = "";
         status.className = "form-status";
 
+        // Entrambi i pulsanti di prenotazione restano nascosti
+        // finché Formspree non conferma l'invio della richiesta.
+        calendarBox.style.display = "none";
+        calendarButtonInline.style.display = "none";
+
         try {
           const response = await fetch(form.action, {
             method: "POST",
@@ -1023,14 +1016,23 @@ const seo = {
 
           form.reset();
           aggiornaCampiCondizionali();
+
           status.textContent =
-            "✅ Richiesta inviata correttamente! ➡️ Ora clicca sul pulsante 'Prenota la tua demo' qui a destra.";
-          status.classList.add("success");
-          calendarBox.hidden = false;
+            "✅ Richiesta inviata correttamente! Ora clicca sul pulsante Prenota la tua demo qui sotto.";
+          status.className = "form-status success";
+
+          // Dopo l'invio riuscito compaiono:
+          // 1) il pulsante sotto il modulo;
+          // 2) il pulsante nel riquadro a destra.
+          calendarButtonInline.style.display = "inline-flex";
+          calendarBox.style.display = "block";
         } catch (error) {
           status.textContent =
             "Non è stato possibile inviare la richiesta. Riprova tra poco.";
-          status.classList.add("error");
+          status.className = "form-status error";
+
+          calendarButtonInline.style.display = "none";
+          calendarBox.style.display = "none";
         } finally {
           button.disabled = false;
           button.textContent = originalText;
@@ -1708,6 +1710,31 @@ const seo = {
     margin-top: 24px;
   }
 
+  .form-confirmation {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .form-confirmation .form-status {
+    flex: 1 1 420px;
+    margin: 0;
+  }
+
+  .button-calendar-inline {
+    min-height: 44px;
+    padding: 0 20px;
+    white-space: nowrap;
+    color: white;
+    background: #087f96;
+  }
+
+  .button-calendar-inline:hover {
+    background: #066f83;
+  }
+
   .form-status {
     margin-bottom: 0;
     font-weight: 700;
@@ -2122,6 +2149,18 @@ const seo = {
     .demo-side {
       padding: 26px;
     }
+
+    .form-confirmation {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .form-confirmation .form-status {
+      flex-basis: auto;
+    }
+
+    .button-calendar-inline {
+      width: 100%;
+    }
   }
 </style>
-gi

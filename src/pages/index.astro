@@ -1,11 +1,1659 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+const currentYear = new Date().getFullYear();
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const seo = {
+  title: "QuoProfit | Profit Management per strutture ricettive",
+  description:
+    "QuoProfit integra Revenue Management, Controllo di Gestione, simulazione strategica e Profit Management per trasformare prezzi, costi e dati in decisioni orientate al profitto.",
+  url: "https://www.quoprofit.com",
+  image: "https://www.quoprofit.com/og-quoprofit.jpg",
+};
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{seo.title}</title>
+    <meta name="description" content={seo.description} />
+    <meta
+      name="keywords"
+      content="QuoProfit, Profit Management, Revenue Management, Controllo di Gestione, Dynamic Pricing, strutture ricettive, hotel, campeggi, villaggi, resort"
+    />
+    <meta name="author" content="Revenue Management S.r.l.s." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={seo.url} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:site_name" content="QuoProfit" />
+    <meta property="og:title" content={seo.title} />
+    <meta property="og:description" content={seo.description} />
+    <meta property="og:url" content={seo.url} />
+    <meta property="og:image" content={seo.image} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={seo.title} />
+    <meta name="twitter:description" content={seo.description} />
+    <meta name="twitter:image" content={seo.image} />
+
+    <meta name="theme-color" content="#087f96" />
+  </head>
+
+  <body>
+    <header class="header">
+      <a class="brand" href="#home" aria-label="QuoProfit - Home">
+        <span class="brand-mark">QP</span>
+        <span class="brand-name">QuoProfit</span>
+      </a>
+
+      <nav class="navigation" aria-label="Menu principale">
+        <a href="#quoprofit">Cos'è</a>
+        <a href="#metodo">Metodo</a>
+        <a href="#profit-management">Profit Management</a>
+        <a href="#revenue-management">Revenue Management</a>
+        <a href="#tecnologia">Tecnologia</a>
+      </nav>
+
+      <a class="button button-small" href="#richiesta-demo">Richiedi una demo</a>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <p class="eyebrow">Profit Management per l'ospitalità</p>
+
+          <h1>
+            Prezzi, costi e strategie.<br />
+            <span>Una sola direzione: il profitto.</span>
+          </h1>
+
+          <p class="hero-description">
+            <strong>QuoProfit</strong> è la piattaforma che integra Revenue Management,
+            Controllo di Gestione, simulazione strategica e validazione umana per aiutare
+            le strutture ricettive a prendere decisioni commerciali sostenibili,
+            misurabili e orientate al risultato economico.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button" href="#richiesta-demo">Richiedi una demo</a>
+            <a class="button button-secondary" href="#quoprofit">Scopri QuoProfit</a>
+          </div>
+
+          <div class="trust" aria-label="Ambiti QuoProfit">
+            <span>Misurare</span>
+            <span>Simulare</span>
+            <span>Decidere</span>
+            <span>Pubblicare</span>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="Flusso operativo QuoProfit">
+          <p class="panel-label">Il ciclo del profitto</p>
+
+          <div class="flow-item">
+            <span>01</span>
+            <div>
+              <strong>Acquisire i dati</strong>
+              <p>Prenotazioni, disponibilità, prezzi, costi e risultati.</p>
+            </div>
+          </div>
+
+          <div class="flow-line"></div>
+
+          <div class="flow-item">
+            <span>02</span>
+            <div>
+              <strong>Simulare gli scenari</strong>
+              <p>Domanda, occupazione, ricavi, marginalità e profitto.</p>
+            </div>
+          </div>
+
+          <div class="flow-line"></div>
+
+          <div class="flow-item">
+            <span>03</span>
+            <div>
+              <strong>Validare la strategia</strong>
+              <p>Il gestore conferma o modifica le proposte elaborate.</p>
+            </div>
+          </div>
+
+          <div class="flow-line"></div>
+
+          <div class="flow-item flow-highlight">
+            <span>04</span>
+            <div>
+              <strong>Pubblicare e misurare</strong>
+              <p>Le decisioni diventano azioni e nuovi dati da analizzare.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro-section" id="quoprofit">
+        <div class="section-heading">
+          <p class="eyebrow">Cos'è QuoProfit</p>
+          <h2>Non un semplice software di pricing, ma un sistema di governo della redditività.</h2>
+          <p>
+            QuoProfit collega le decisioni tariffarie ai costi, alla marginalità,
+            alla capacità produttiva e agli obiettivi economici della struttura.
+            In questo modo il prezzo non viene valutato soltanto per la sua capacità
+            di generare domanda, ma anche per la sua reale sostenibilità aziendale.
+          </p>
+        </div>
+
+        <div class="value-grid">
+          <article>
+            <span>01</span>
+            <h3>Visione integrata</h3>
+            <p>Unisce dati commerciali, economici, finanziari e produttivi.</p>
+          </article>
+
+          <article>
+            <span>02</span>
+            <h3>Decisioni preventive</h3>
+            <p>Consente di misurare l'effetto di una strategia prima di applicarla.</p>
+          </article>
+
+          <article>
+            <span>03</span>
+            <h3>Controllo umano</h3>
+            <p>Gli algoritmi propongono; il gestore conserva la decisione finale.</p>
+          </article>
+
+          <article>
+            <span>04</span>
+            <h3>Profitto misurabile</h3>
+            <p>Monitora il valore generato, non soltanto fatturato e occupazione.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="method-section" id="metodo">
+        <div class="section-heading section-heading-light">
+          <p class="eyebrow eyebrow-light">Il metodo QuoProfit</p>
+          <h2>Misurare. Simulare. Decidere.</h2>
+          <p>
+            Un processo continuo che trasforma i dati della struttura in strategie
+            commerciali verificabili e orientate al profitto.
+          </p>
+        </div>
+
+        <div class="method-grid">
+          <article id="misurare">
+            <div class="method-number">01</div>
+            <p class="feature-kicker">Conoscere l'azienda</p>
+            <h3>Misurare</h3>
+            <p>
+              QuoProfit integra Controllo di Gestione e Analisi Economica e Finanziaria
+              per leggere con precisione ricavi, costi, marginalità, liquidità,
+              capacità produttiva e risultati.
+            </p>
+            <p>
+              La misurazione consente di individuare la corretta strategia da implementare:
+              prezzi appetibili per un mercato sempre più attento, ma sostenibili
+              per l'azienda e coerenti con gli obiettivi di profitto.
+            </p>
+          </article>
+
+          <article id="simulare">
+            <div class="method-number">02</div>
+            <p class="feature-kicker">Valutare prima di agire</p>
+            <h3>Simulare</h3>
+            <p>
+              Il motore di simulazione confronta strategie alternative e ne misura
+              l'impatto su prezzi, occupazione, ricavi, costi, marginalità e profitto.
+            </p>
+            <p>
+              Il confronto con il Benchmark Interno aiuta a capire quale logica commerciale
+              possa essere maggiormente assorbita dal mercato, riducendo il rischio
+              di decisioni astratte o scollegate dal comportamento reale della domanda.
+            </p>
+          </article>
+
+          <article id="decidere">
+            <div class="method-number">03</div>
+            <p class="feature-kicker">Mantenere il controllo</p>
+            <h3>Decidere</h3>
+            <p>
+              Gli algoritmi elaborano proposte, ma la scelta finale rimane sempre
+              nelle mani del gestore, che può confermare o modificare ogni indicazione.
+            </p>
+            <p>
+              Le tariffe approvate possono quindi essere pubblicate sui canali di vendita
+              collegati al Channel Manager, trasformando analisi e simulazione
+              in azioni commerciali concrete.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split-section" id="profit-management">
+        <div class="split-copy">
+          <p class="eyebrow">Profit Management</p>
+          <h2>Dal fatturato al valore economico realmente generato.</h2>
+          <p>
+            Il Profit Management amplia il tradizionale approccio commerciale:
+            ogni decisione viene valutata in relazione al margine, al profitto,
+            al punto di equilibrio e alla capacità produttiva utilizzata.
+          </p>
+
+          <ul class="check-list">
+            <li>Profitto per prenotazione, periodo e unità abitativa</li>
+            <li>Margine di contribuzione e marginalità</li>
+            <li>EBITDA e risultato operativo</li>
+            <li>Break Even Point e distanza dal punto di equilibrio</li>
+            <li>ProfitPAR e indicatori orientati al profitto</li>
+            <li>Capacità produttiva utilizzata, residua e recuperata</li>
+          </ul>
+        </div>
+
+        <div class="metric-panel">
+          <p class="panel-label">Dalla vendita al risultato</p>
+          <div class="metric-row">
+            <span>Ricavi</span>
+            <strong>Quanto vendiamo</strong>
+          </div>
+          <div class="metric-row">
+            <span>Costi</span>
+            <strong>Quanto assorbe la produzione</strong>
+          </div>
+          <div class="metric-row">
+            <span>Margine</span>
+            <strong>Quanto rimane disponibile</strong>
+          </div>
+          <div class="metric-row metric-highlight">
+            <span>Profitto</span>
+            <strong>Quanto valore genera la strategia</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="section split-section reverse" id="revenue-management">
+        <div class="split-copy">
+          <p class="eyebrow">Revenue Management evoluto</p>
+          <h2>Il prezzo migliore non è sempre il prezzo più alto.</h2>
+          <p>
+            QuoProfit analizza domanda, occupazione, disponibilità residua,
+            pickup, booking pace, durata dei soggiorni e posizionamento tariffario.
+            Ma collega sempre la scelta commerciale alla sostenibilità economica.
+          </p>
+
+          <ul class="check-list">
+            <li>Dynamic Pricing e gestione dei listini BAR</li>
+            <li>Forecast della domanda e dei ricavi</li>
+            <li>Pickup, booking pace e saturazione</li>
+            <li>Minimum Stay, Maximum Stay e restrizioni</li>
+            <li>Early Booking, Last Minute e politiche commerciali</li>
+            <li>Pubblicazione tramite Channel Manager</li>
+          </ul>
+        </div>
+
+        <div class="visual-card">
+          <p class="visual-label">Il nuovo equilibrio</p>
+          <div class="balance-item">
+            <span>Mercato</span>
+            <div class="balance-bar"><i style="width: 78%"></i></div>
+          </div>
+          <div class="balance-item">
+            <span>Occupazione</span>
+            <div class="balance-bar"><i style="width: 68%"></i></div>
+          </div>
+          <div class="balance-item">
+            <span>Marginalità</span>
+            <div class="balance-bar"><i style="width: 83%"></i></div>
+          </div>
+          <div class="balance-item">
+            <span>Profitto</span>
+            <div class="balance-bar"><i style="width: 91%"></i></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="benchmark-section" id="benchmark">
+        <div class="benchmark-copy">
+          <p class="eyebrow eyebrow-light">Benchmark Interno</p>
+          <h2>Il confronto più utile è quello con il comportamento reale della tua struttura.</h2>
+          <p>
+            QuoProfit confronta le nuove strategie con storico, budget, forecast,
+            consuntivi, stagioni e performance delle singole unità. Il Benchmark Interno
+            permette di valutare l'assorbibilità commerciale di una proposta
+            sulla base dei dati effettivi dell'azienda.
+          </p>
+        </div>
+
+        <div class="benchmark-grid">
+          <div>
+            <span>Storico</span>
+            <strong>Come ha reagito la domanda</strong>
+          </div>
+          <div>
+            <span>Strategia attuale</span>
+            <strong>Quale risultato sta producendo</strong>
+          </div>
+          <div>
+            <span>Scenario simulato</span>
+            <strong>Quale effetto potrebbe generare</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="section algorithm-section" id="algoritmi">
+        <div class="section-heading">
+          <p class="eyebrow">Algoritmi e validazione umana</p>
+          <h2>La tecnologia supporta la decisione. Non sostituisce la responsabilità.</h2>
+          <p>
+            QuoProfit elabora dati, confronta scenari e formula proposte tariffarie,
+            mantenendo sempre il gestore al centro del processo decisionale.
+          </p>
+        </div>
+
+        <div class="decision-flow">
+          <div>
+            <span>01</span>
+            <strong>Elaborazione</strong>
+            <p>Gli algoritmi analizzano dati, obiettivi e vincoli.</p>
+          </div>
+          <div class="decision-arrow">→</div>
+          <div>
+            <span>02</span>
+            <strong>Proposta</strong>
+            <p>Il sistema presenta una strategia motivata e misurabile.</p>
+          </div>
+          <div class="decision-arrow">→</div>
+          <div class="decision-human">
+            <span>03</span>
+            <strong>Validazione umana</strong>
+            <p>Il gestore conferma, modifica o rifiuta la proposta.</p>
+          </div>
+          <div class="decision-arrow">→</div>
+          <div>
+            <span>04</span>
+            <strong>Pubblicazione</strong>
+            <p>Solo la decisione approvata viene applicata operativamente.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="technology-section" id="tecnologia">
+        <div class="technology-badge" aria-hidden="true">✓</div>
+        <div>
+          <p class="eyebrow eyebrow-light">Innovazione</p>
+          <h2>Tecnologia supportata da metodologia brevettata.</h2>
+          <p>
+            QuoProfit rappresenta il passaggio dal Revenue Management al Profit Management
+            e alla Profit Governance: un modello in cui analisi economico-finanziaria,
+            Controllo di Gestione, simulazione, pricing e distribuzione operano
+            all'interno di un unico processo logico.
+          </p>
+          <p>
+            Ogni decisione viene misurata, simulata e sottoposta a validazione umana
+            prima della pubblicazione, con l'obiettivo di massimizzare il profitto reale
+            e non il solo fatturato.
+          </p>
+        </div>
+      </section>
+
+      <section class="demo-section" id="richiesta-demo">
+        <div class="demo-intro">
+          <p class="eyebrow">Richiedi una demo</p>
+          <h2>Scopri QuoProfit applicato alla tua struttura.</h2>
+          <p>
+            Compila il modulo con le principali caratteristiche della tua azienda.
+            Le informazioni ci permetteranno di preparare una presentazione coerente
+            con il tuo modello operativo, i sistemi utilizzati e le priorità gestionali.
+          </p>
+        </div>
+
+        <div class="demo-layout">
+          <form
+            id="demo-form"
+            class="demo-form"
+            action="https://formspree.io/f/meeyazad"
+            method="POST"
+          >
+            <input
+              type="hidden"
+              name="_subject"
+              value="Nuova richiesta demo dal sito QuoProfit"
+            />
+
+            <div class="form-grid">
+              <label>
+                <span>Tipo struttura *</span>
+                <select name="Tipo struttura" required>
+                  <option value="">Seleziona</option>
+                  <option>Hotel</option>
+                  <option>Resort</option>
+                  <option>Residence</option>
+                  <option>Villaggio Turistico</option>
+                  <option>Campeggio</option>
+                  <option>Glamping</option>
+                  <option>Agriturismo</option>
+                  <option>B&B</option>
+                  <option>Affittacamere</option>
+                  <option>Casa Vacanze</option>
+                  <option>Appartamenti Turistici</option>
+                  <option>Ostello</option>
+                  <option>Altro</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Nome struttura *</span>
+                <input type="text" name="Nome struttura" required />
+              </label>
+
+              <label>
+                <span>Località *</span>
+                <input type="text" name="Località" required />
+              </label>
+
+              <label>
+                <span>Numero unità abitative *</span>
+                <input type="number" name="Numero unità abitative" min="1" required />
+              </label>
+
+              <label>
+                <span>Nome referente *</span>
+                <input type="text" name="Nome referente" required />
+              </label>
+
+              <label>
+                <span>Telefono *</span>
+                <input type="tel" name="Telefono" required />
+              </label>
+
+              <label>
+                <span>Email *</span>
+                <input type="email" name="Email" required />
+              </label>
+
+              <label>
+                <span>PMS utilizzato *</span>
+                <select name="PMS utilizzato" required>
+                  <option value="">Seleziona</option>
+                  <option>Passepartout</option>
+                  <option>Ericsoft</option>
+                  <option>Scrigno</option>
+                  <option>Scidoo</option>
+                  <option>QuoVai</option>
+                  <option>5 Stelle</option>
+                  <option>Protel</option>
+                  <option>Oracle OPERA</option>
+                  <option>Mews</option>
+                  <option>Cloudbeds</option>
+                  <option>RoomRaccoon</option>
+                  <option>Hotel in Cloud</option>
+                  <option>Nessun PMS</option>
+                  <option>Altro</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Channel Manager utilizzato *</span>
+                <select name="Channel Manager utilizzato" required>
+                  <option value="">Seleziona</option>
+                  <option>Simple Booking</option>
+                  <option>Vertical Booking</option>
+                  <option>SiteMinder</option>
+                  <option>Octorate</option>
+                  <option>WuBook</option>
+                  <option>D-EDGE</option>
+                  <option>Hotel Spider</option>
+                  <option>RateGain</option>
+                  <option>Bookassist</option>
+                  <option>QuoVai</option>
+                  <option>Nessun Channel Manager</option>
+                  <option>Altro</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Ti interessa il Controllo di Gestione? *</span>
+                <select name="Interesse Controllo di Gestione" required>
+                  <option value="">Seleziona</option>
+                  <option>Sì</option>
+                  <option>No</option>
+                  <option>Vorrei saperne di più</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Come ci hai conosciuto? *</span>
+                <select id="conoscenza" name="Come ci hai conosciuto" required>
+                  <option value="">Seleziona</option>
+                  <option>Google</option>
+                  <option>LinkedIn</option>
+                  <option>Facebook</option>
+                  <option>Instagram</option>
+                  <option>Passaparola</option>
+                  <option>Cliente QuoProfit</option>
+                  <option>BNI</option>
+                  <option>Fiera</option>
+                  <option>Webinar</option>
+                  <option>Associazione di categoria</option>
+                  <option>YouTube</option>
+                  <option>Altro</option>
+                </select>
+              </label>
+
+              <label id="capitolo-bni-field" class="conditional-field">
+                <span>Capitolo BNI</span>
+                <input type="text" name="Capitolo BNI" />
+              </label>
+
+              <label id="altro-conoscenza-field" class="conditional-field">
+                <span>Specifica come ci hai conosciuto</span>
+                <input type="text" name="Altro - Come ci hai conosciuto" />
+              </label>
+
+              <label class="form-full">
+                <span>Messaggio</span>
+                <textarea
+                  name="Messaggio"
+                  rows="5"
+                  placeholder="Descrivi brevemente le tue esigenze o gli aspetti che vorresti approfondire."
+                ></textarea>
+              </label>
+            </div>
+
+            <label class="privacy-row">
+              <input
+                type="checkbox"
+                name="Presa visione informativa privacy"
+                value="Confermata"
+                required
+              />
+              <span>
+                Dichiaro di aver letto l'
+                <a href="#privacy-policy">Informativa Privacy</a>
+                relativa alla gestione della richiesta di contatto e demo. *
+              </span>
+            </label>
+
+            <label class="privacy-row">
+              <input
+                type="checkbox"
+                name="Consenso newsletter e comunicazioni commerciali"
+                value="Prestato"
+              />
+              <span>
+                Acconsento, facoltativamente, a ricevere aggiornamenti e comunicazioni
+                commerciali relative a QuoProfit.
+              </span>
+            </label>
+
+            <button class="button demo-submit" type="submit">Invia richiesta</button>
+            <p id="form-status" class="form-status" aria-live="polite"></p>
+          </form>
+
+          <aside class="demo-side">
+            <p class="eyebrow eyebrow-light">Cosa succede dopo?</p>
+            <h3>Una demo costruita sulle caratteristiche della tua struttura.</h3>
+
+            <div class="demo-step">
+              <span>01</span>
+              <p>Riceviamo e analizziamo le informazioni inviate.</p>
+            </div>
+
+            <div class="demo-step">
+              <span>02</span>
+              <p>Scegli data e orario disponibili nel calendario.</p>
+            </div>
+
+            <div class="demo-step">
+              <span>03</span>
+              <p>Approfondiamo insieme prezzi, costi, marginalità e profitto.</p>
+            </div>
+
+            <div id="calendar-box" class="calendar-box" hidden>
+              <strong>Richiesta ricevuta correttamente.</strong>
+              <p>Ora scegli direttamente data e orario della demo.</p>
+              <a
+                class="button button-light"
+                href="https://calendar.app.google/215FfuoWEndYFCNT6"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Prenota la tua demo
+              </a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contatti">
+        <div>
+          <p class="eyebrow eyebrow-light">Contatti</p>
+          <h2>Parliamo della tua struttura.</h2>
+          <p>
+            REVENUE MANAGEMENT S.R.L.S.<br />
+            Via IV Novembre 8<br />
+            31057 Silea (Treviso)<br />
+            P. IVA 05284760260
+          </p>
+          <p>
+            <a href="tel:+393883978009">+39 388 397 8009</a><br />
+            <a href="mailto:quoprofit@gmail.com">quoprofit@gmail.com</a><br />
+            PEC: <a href="mailto:revd@pec.it">revd@pec.it</a>
+          </p>
+        </div>
+
+        <a class="button button-light" href="#richiesta-demo">Richiedi una demo</a>
+      </section>
+
+      <section class="legal-section" id="informazioni-legali">
+        <div class="legal-heading">
+          <p class="eyebrow">Informazioni legali</p>
+          <h2>Trasparenza, privacy e proprietà intellettuale.</h2>
+        </div>
+
+        <div class="legal-grid">
+          <article id="privacy-policy">
+            <h3>Privacy Policy</h3>
+            <p>
+              Il Titolare del trattamento è Revenue Management S.r.l.s.,
+              Via IV Novembre 8, 31057 Silea (TV), P. IVA 05284760260.
+              I dati raccolti tramite il modulo sono utilizzati per gestire la richiesta,
+              organizzare la demo e predisporre un'eventuale proposta commerciale.
+            </p>
+            <p>
+              Le richieste relative ai dati personali possono essere inviate a
+              <a href="mailto:quoprofit@gmail.com">quoprofit@gmail.com</a>
+              oppure a <a href="mailto:revd@pec.it">revd@pec.it</a>.
+            </p>
+          </article>
+
+          <article id="cookie-policy">
+            <h3>Cookie Policy</h3>
+            <p>
+              Il sito utilizza esclusivamente strumenti tecnici necessari al funzionamento,
+              alla sicurezza e alla gestione dei servizi richiesti dall'utente.
+              Eventuali servizi esterni sono soggetti alle rispettive informative.
+            </p>
+          </article>
+
+          <article>
+            <h3>Proprietà intellettuale</h3>
+            <p>
+              QuoProfit, i relativi contenuti, software, algoritmi, metodologie,
+              denominazioni ed elementi grafici sono protetti dalla normativa applicabile.
+              La tecnologia è supportata da innovazioni oggetto di tutela brevettuale.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <p>© {currentYear} Revenue Management S.r.l.s. Tutti i diritti riservati.</p>
+        <p>QuoProfit · Profit Management · Tecnologia supportata da metodologia brevettata.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#privacy-policy">Privacy Policy</a>
+        <a href="#cookie-policy">Cookie Policy</a>
+        <a href="#informazioni-legali">Informazioni legali</a>
+      </div>
+    </footer>
+
+    <script is:inline>
+      const form = document.getElementById("demo-form");
+      const status = document.getElementById("form-status");
+      const calendarBox = document.getElementById("calendar-box");
+      const conoscenza = document.getElementById("conoscenza");
+      const bniField = document.getElementById("capitolo-bni-field");
+      const altroField = document.getElementById("altro-conoscenza-field");
+
+      function aggiornaCampiCondizionali() {
+        const value = conoscenza.value;
+        bniField.classList.toggle("is-visible", value === "BNI");
+        altroField.classList.toggle("is-visible", value === "Altro");
+
+        const bniInput = bniField.querySelector("input");
+        const altroInput = altroField.querySelector("input");
+
+        bniInput.required = value === "BNI";
+        altroInput.required = value === "Altro";
+
+        if (value !== "BNI") bniInput.value = "";
+        if (value !== "Altro") altroInput.value = "";
+      }
+
+      conoscenza.addEventListener("change", aggiornaCampiCondizionali);
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const button = form.querySelector('button[type="submit"]');
+        const originalText = button.textContent;
+
+        button.disabled = true;
+        button.textContent = "Invio in corso…";
+        status.textContent = "";
+        status.className = "form-status";
+
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" },
+          });
+
+          if (!response.ok) throw new Error("Invio non riuscito");
+
+          form.reset();
+          aggiornaCampiCondizionali();
+          status.textContent =
+            "✅ Richiesta inviata correttamente! ➡️ Ora clicca sul pulsante 'Prenota la tua demo' qui a destra.";
+          status.classList.add("success");
+          calendarBox.hidden = false;
+        } catch (error) {
+          status.textContent =
+            "Non è stato possibile inviare la richiesta. Riprova tra poco.";
+          status.classList.add("error");
+        } finally {
+          button.disabled = false;
+          button.textContent = originalText;
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  :global(body) {
+    margin: 0;
+    background: #f5f7f9;
+    color: #17222c;
+    font-family:
+      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+  }
+
+  :global(a) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :global(p) {
+    line-height: 1.75;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding: 18px clamp(22px, 5vw, 88px);
+    background: rgba(245, 247, 249, 0.94);
+    border-bottom: 1px solid rgba(23, 34, 44, 0.08);
+    backdrop-filter: blur(14px);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 850;
+    font-size: 1.2rem;
+  }
+
+  .brand-mark {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    color: white;
+    border-radius: 16px;
+    background: #087f96;
+    letter-spacing: -0.03em;
+  }
+
+  .brand-name {
+    white-space: nowrap;
+  }
+
+  .navigation {
+    display: flex;
+    gap: 24px;
+    font-size: 0.93rem;
+    font-weight: 700;
+  }
+
+  .navigation a {
+    transition: color 0.2s ease;
+  }
+
+  .navigation a:hover {
+    color: #087f96;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 24px;
+    color: white;
+    font-weight: 800;
+    border: 0;
+    border-radius: 12px;
+    background: #087f96;
+    cursor: pointer;
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .button:hover {
+    transform: translateY(-2px);
+    background: #066f83;
+  }
+
+  .button-small {
+    min-height: 44px;
+    padding: 0 18px;
+    font-size: 0.9rem;
+  }
+
+  .button-secondary {
+    color: #17222c;
+    background: white;
+    border: 1px solid rgba(23, 34, 44, 0.14);
+  }
+
+  .button-secondary:hover {
+    background: #edf3f5;
+  }
+
+  .button-light {
+    color: #087f96;
+    background: white;
+  }
+
+  .button-light:hover {
+    background: #eaf6f8;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(340px, 0.75fr);
+    gap: clamp(48px, 7vw, 110px);
+    align-items: center;
+    min-height: calc(100vh - 92px);
+    padding: clamp(72px, 9vw, 130px) clamp(24px, 7vw, 112px);
+    background:
+      radial-gradient(circle at 15% 20%, rgba(8, 127, 150, 0.15), transparent 35%),
+      linear-gradient(135deg, #f8fafb 0%, #eef3f5 100%);
+  }
+
+  .hero h1,
+  .section-heading h2,
+  .split-copy h2,
+  .technology-section h2,
+  .demo-intro h2,
+  .contact-section h2 {
+    margin: 0;
+    font-size: clamp(2.45rem, 5vw, 5.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+  }
+
+  .hero h1 span {
+    color: #087f96;
+  }
+
+  .hero-description {
+    max-width: 780px;
+    margin: 30px 0 0;
+    font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+    color: #42515d;
+  }
+
+  .eyebrow {
+    margin: 0 0 18px;
+    color: #087f96;
+    font-size: 0.82rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow-light {
+    color: #7de2ef;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 34px;
+  }
+
+  .trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 38px;
+  }
+
+  .trust span {
+    padding: 10px 14px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    border: 1px solid rgba(8, 127, 150, 0.2);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  .hero-panel,
+  .metric-panel,
+  .visual-card {
+    padding: clamp(28px, 4vw, 48px);
+    border-radius: 28px;
+    background: #16232d;
+    color: white;
+    box-shadow: 0 28px 70px rgba(23, 34, 44, 0.16);
+  }
+
+  .panel-label,
+  .visual-label {
+    margin: 0 0 28px;
+    color: #7de2ef;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .flow-item {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .flow-item > span,
+  .method-number {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(125, 226, 239, 0.12);
+    color: #7de2ef;
+    font-weight: 900;
+  }
+
+  .flow-item strong {
+    font-size: 1.03rem;
+  }
+
+  .flow-item p {
+    margin: 5px 0 0;
+    color: #b9c5cc;
+    font-size: 0.92rem;
+  }
+
+  .flow-line {
+    width: 1px;
+    height: 24px;
+    margin: 8px 0 8px 21px;
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .flow-highlight {
+    padding: 14px;
+    margin: 0 -14px;
+    border-radius: 18px;
+    background: rgba(8, 127, 150, 0.2);
+  }
+
+  .section {
+    padding: clamp(80px, 9vw, 140px) clamp(24px, 7vw, 112px);
+  }
+
+  .section-heading {
+    max-width: 970px;
+  }
+
+  .section-heading h2,
+  .split-copy h2,
+  .technology-section h2,
+  .demo-intro h2,
+  .contact-section h2 {
+    font-size: clamp(2.15rem, 4vw, 4.6rem);
+    line-height: 1.02;
+  }
+
+  .section-heading > p:last-child {
+    max-width: 820px;
+    margin-top: 26px;
+    color: #52616c;
+    font-size: 1.12rem;
+  }
+
+  .value-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 52px;
+  }
+
+  .value-grid article {
+    padding: 30px;
+    border: 1px solid rgba(23, 34, 44, 0.08);
+    border-radius: 22px;
+    background: white;
+  }
+
+  .value-grid article > span,
+  .feature-kicker {
+    color: #087f96;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .value-grid h3,
+  .method-grid h3 {
+    margin: 14px 0 10px;
+    font-size: 1.45rem;
+  }
+
+  .value-grid p {
+    margin: 0;
+    color: #586772;
+  }
+
+  .method-section,
+  .benchmark-section,
+  .technology-section,
+  .contact-section {
+    padding: clamp(80px, 9vw, 140px) clamp(24px, 7vw, 112px);
+    color: white;
+    background: #16232d;
+  }
+
+  .section-heading-light > p:last-child {
+    color: #c5d0d6;
+  }
+
+  .method-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 54px;
+  }
+
+  .method-grid article {
+    padding: 38px;
+    border-radius: 24px;
+    background: white;
+    color: #17222c;
+  }
+
+  .method-grid article p {
+    color: #52616c;
+  }
+
+  .method-number {
+    margin-bottom: 34px;
+    color: white;
+    background: #087f96;
+  }
+
+  .split-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 0.75fr);
+    gap: clamp(46px, 8vw, 120px);
+    align-items: center;
+  }
+
+  .split-section.reverse .split-copy {
+    order: 2;
+  }
+
+  .split-copy p {
+    color: #52616c;
+    font-size: 1.05rem;
+  }
+
+  .check-list {
+    display: grid;
+    gap: 14px;
+    margin: 32px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .check-list li {
+    position: relative;
+    padding-left: 30px;
+    font-weight: 700;
+  }
+
+  .check-list li::before {
+    position: absolute;
+    left: 0;
+    content: "✓";
+    color: #087f96;
+    font-weight: 900;
+  }
+
+  .metric-row {
+    display: grid;
+    gap: 6px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .metric-row span {
+    color: #7de2ef;
+    font-size: 0.78rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .metric-row strong {
+    font-size: 1.06rem;
+  }
+
+  .metric-highlight {
+    margin: 14px -18px -6px;
+    padding: 22px 18px;
+    border-radius: 16px;
+    border-bottom: 0;
+    background: #087f96;
+  }
+
+  .balance-item {
+    margin-top: 24px;
+  }
+
+  .balance-item span {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .balance-bar {
+    height: 12px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .balance-bar i {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: #7de2ef;
+  }
+
+  .benchmark-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(380px, 0.85fr);
+    gap: 70px;
+    align-items: center;
+    background: #087f96;
+  }
+
+  .benchmark-copy h2 {
+    margin: 0;
+    font-size: clamp(2.2rem, 4vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+
+  .benchmark-copy p:last-child {
+    color: #d9f4f7;
+  }
+
+  .benchmark-grid {
+    display: grid;
+    gap: 14px;
+  }
+
+  .benchmark-grid div {
+    padding: 26px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .benchmark-grid span {
+    display: block;
+    margin-bottom: 8px;
+    color: #c8f2f6;
+    font-size: 0.78rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .algorithm-section {
+    background: #eef3f5;
+  }
+
+  .decision-flow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1.1fr auto 1fr;
+    gap: 14px;
+    align-items: stretch;
+    margin-top: 54px;
+  }
+
+  .decision-flow > div:not(.decision-arrow) {
+    padding: 28px;
+    border-radius: 20px;
+    background: white;
+  }
+
+  .decision-flow span {
+    color: #087f96;
+    font-weight: 900;
+  }
+
+  .decision-flow strong {
+    display: block;
+    margin-top: 16px;
+    font-size: 1.08rem;
+  }
+
+  .decision-flow p {
+    margin-bottom: 0;
+    color: #5b6974;
+  }
+
+  .decision-arrow {
+    display: grid;
+    place-items: center;
+    color: #087f96;
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+
+  .decision-flow .decision-human {
+    color: white;
+    background: #087f96;
+  }
+
+  .decision-flow .decision-human span,
+  .decision-flow .decision-human p {
+    color: white;
+  }
+
+  .technology-section {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 38px;
+    background: #0f3d49;
+  }
+
+  .technology-badge {
+    display: grid;
+    place-items: center;
+    width: 88px;
+    height: 88px;
+    border-radius: 26px;
+    color: #0f3d49;
+    background: #7de2ef;
+    font-size: 2.2rem;
+    font-weight: 900;
+  }
+
+  .technology-section p:not(.eyebrow) {
+    max-width: 900px;
+    color: #c8d7dc;
+  }
+
+  .demo-section {
+    padding: clamp(80px, 9vw, 140px) clamp(24px, 7vw, 112px);
+    background: white;
+  }
+
+  .demo-intro {
+    max-width: 900px;
+  }
+
+  .demo-intro > p:last-child {
+    color: #52616c;
+    font-size: 1.08rem;
+  }
+
+  .demo-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(330px, 0.8fr);
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  .demo-form {
+    padding: clamp(26px, 4vw, 44px);
+    border: 1px solid rgba(23, 34, 44, 0.08);
+    border-radius: 26px;
+    background: #f7f9fa;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .form-full {
+    grid-column: 1 / -1;
+  }
+
+  label span {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.88rem;
+    font-weight: 800;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 14px 15px;
+    color: #17222c;
+    border: 1px solid #d7e0e4;
+    border-radius: 10px;
+    background: white;
+    font: inherit;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: 2px solid rgba(8, 127, 150, 0.2);
+    border-color: #087f96;
+  }
+
+  .conditional-field {
+    display: none;
+  }
+
+  .conditional-field.is-visible {
+    display: block;
+  }
+
+  .privacy-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+    align-items: start;
+    margin-top: 20px;
+  }
+
+  .privacy-row input {
+    width: auto;
+    margin-top: 5px;
+  }
+
+  .privacy-row span {
+    font-weight: 500;
+    line-height: 1.55;
+  }
+
+  .privacy-row a {
+    color: #087f96;
+    text-decoration: underline;
+  }
+
+  .demo-submit {
+    margin-top: 24px;
+  }
+
+  .form-status {
+    margin-bottom: 0;
+    font-weight: 700;
+  }
+
+  .form-status.success {
+    color: #087f96;
+  }
+
+  .form-status.error {
+    color: #a62b2b;
+  }
+
+  .demo-side {
+    padding: 40px;
+    border-radius: 26px;
+    color: white;
+    background: #16232d;
+  }
+
+  .demo-side h3 {
+    margin-top: 0;
+    font-size: 1.65rem;
+  }
+
+  .demo-step {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 14px;
+    align-items: start;
+    margin-top: 26px;
+  }
+
+  .demo-step span {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    color: #7de2ef;
+    background: rgba(125, 226, 239, 0.12);
+    font-weight: 900;
+  }
+
+  .demo-step p {
+    margin: 6px 0 0;
+    color: #c5d0d6;
+  }
+
+  .calendar-box {
+    margin-top: 34px;
+    padding: 24px;
+    border-radius: 18px;
+    background: #087f96;
+  }
+
+  .calendar-box p {
+    margin: 8px 0 18px;
+  }
+
+  .contact-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: center;
+    background: #087f96;
+  }
+
+  .contact-section p {
+    color: #d7f2f5;
+  }
+
+  .legal-section {
+    padding: clamp(70px, 8vw, 120px) clamp(24px, 7vw, 112px);
+  }
+
+  .legal-heading {
+    max-width: 850px;
+  }
+
+  .legal-heading h2 {
+    margin: 0;
+    font-size: clamp(2rem, 3.5vw, 3.8rem);
+    letter-spacing: -0.04em;
+  }
+
+  .legal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 44px;
+  }
+
+  .legal-grid article {
+    padding: 28px;
+    border: 1px solid rgba(23, 34, 44, 0.08);
+    border-radius: 20px;
+    background: white;
+  }
+
+  .legal-grid p {
+    color: #5b6974;
+    font-size: 0.93rem;
+  }
+
+  .legal-grid a {
+    color: #087f96;
+    text-decoration: underline;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 32px clamp(24px, 7vw, 112px);
+    color: #c8d2d8;
+    background: #101a21;
+    font-size: 0.88rem;
+  }
+
+  footer p {
+    margin: 4px 0;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+  }
+
+  @media (max-width: 1100px) {
+    .navigation {
+      display: none;
+    }
+
+    .hero,
+    .split-section,
+    .benchmark-section,
+    .demo-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      min-height: auto;
+    }
+
+    .value-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .method-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .split-section.reverse .split-copy {
+      order: initial;
+    }
+
+    .decision-flow {
+      grid-template-columns: 1fr;
+    }
+
+    .decision-arrow {
+      transform: rotate(90deg);
+      min-height: 24px;
+    }
+
+    .legal-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .header {
+      padding: 14px 18px;
+    }
+
+    .brand-name {
+      display: none;
+    }
+
+    .header .button-small {
+      padding: 0 14px;
+    }
+
+    .hero,
+    .section,
+    .method-section,
+    .benchmark-section,
+    .technology-section,
+    .demo-section,
+    .contact-section,
+    .legal-section {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .hero {
+      padding-top: 62px;
+      padding-bottom: 72px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 13vw, 4rem);
+    }
+
+    .value-grid,
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .technology-section {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-section,
+    footer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-panel,
+    .metric-panel,
+    .visual-card,
+    .demo-side {
+      padding: 26px;
+    }
+  }
+</style>

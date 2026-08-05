@@ -62,7 +62,19 @@ const seo = {
         <a href="#informazioni-legali">Informazioni legali</a>
       </nav>
 
-      <a class="button button-small" href="#richiesta-demo">Richiedi una demo</a>
+      <div class="header-actions">
+        <a
+          class="button button-secondary button-small"
+          href="https://app.quoprofit.com/login"
+          aria-label="Accedi all'area riservata QuoProfit"
+        >
+          Accedi
+        </a>
+
+        <a class="button button-small" href="#richiesta-demo">
+          Richiedi una demo
+        </a>
+      </div>
     </header>
 
     <main>
@@ -1018,8 +1030,8 @@ const seo = {
           aggiornaCampiCondizionali();
 
           status.textContent =
-            "✅ Richiesta inviata correttamente! Ora  sul pulsante Prenota la tua demo";
-          status.className = "form-status success";clicca
+            "✅ Richiesta inviata correttamente! Ora clicca sul pulsante Prenota la tua demo";
+          status.className = "form-status success";
 
           // Dopo l'invio riuscito compaiono:
           // 1) il pulsante sotto il modulo;
@@ -1126,6 +1138,13 @@ const seo = {
 
   .navigation a:hover {
     color: #087f96;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
   }
 
   .button {
@@ -2078,7 +2097,25 @@ const seo = {
 
   @media (max-width: 700px) {
     .header {
-      padding: 14px 18px;
+      padding: 12px 14px;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      height: 48px;
+    }
+
+    .header-actions {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 6px;
+    }
+
+    .header-actions .button-small {
+      min-height: 34px;
+      padding: 0 11px;
+      font-size: 0.76rem;
+      white-space: nowrap;
     }
 
     .brand-name {
